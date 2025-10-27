@@ -28,3 +28,4 @@ akuankka.tulosta_tiedot()
 
 Hytti_no_6 = Kirja('Hytti no. 6', 'Rosa Liksom', 200)
 Hytti_no_6.tulosta_tiedot()
+
