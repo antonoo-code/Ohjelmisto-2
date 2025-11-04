@@ -9,4 +9,9 @@ for (i = 0; i < num_of_names; i++) {
 
 let sorted_names_list = names_list.sort();
 
-document.querySelector(".output").textContent = sorted_names_list;
+const ul = document.querySelector(".output");
+sorted_names_list.forEach((name) => {
+  const li = document.createElement("li");
+  li.textContent = name;
+  ul.appendChild(li);
+});

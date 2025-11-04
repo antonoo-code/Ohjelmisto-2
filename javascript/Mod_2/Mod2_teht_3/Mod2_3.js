@@ -10,4 +10,9 @@ dogs_list.sort();
 
 let sorted_dogs_list = dogs_list.reverse();
 
-document.querySelector(".output").textContent = sorted_dogs_list;
+const ul = document.querySelector(".output");
+sorted_dogs_list.forEach((dog) => {
+  const li = document.createElement("li");
+  li.textContent = dog;
+  ul.appendChild(li);
+});
