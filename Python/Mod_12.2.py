@@ -11,5 +11,5 @@ vastaus2 = requests.get(pyyntö2).json()
 
 temp_celcius = vastaus2['main']['temp']-273.15 
 print(f'Paikkakunnalla {paikkakunta} on :{temp_celcius:.2f} celsius astetta.')
-
+print(vastaus1)
 
