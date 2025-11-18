@@ -1,0 +1,8 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="lentopeli.sql" type="DatabaseScript" editBeforeRun="true" nameIsGenerated="true">
+    <script-file value="$PROJECT_DIR$/../lentopeli.sql" />
+    <script-mode>FILE</script-mode>
+    <data-source id="10bf597d-fb70-4f96-83f0-6da0e103a79c" namespace="schema/&quot;esim_peli&quot;" />
+    <method v="2" />
+  </configuration>
+</component>
