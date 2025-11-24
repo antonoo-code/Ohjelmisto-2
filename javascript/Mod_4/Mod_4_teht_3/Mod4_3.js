@@ -1,10 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
+  //lisää kuuntelijan joka huomaa kun documentti on ladattu ja suorittaa tän lamdafunktion.
+  //tallennetaan tarvittavat elementit muuttujiin.
   const form = document.querySelector("form");
   const input = document.getElementById("query");
   const resultsDiv = document.getElementById("results");
 
   form.addEventListener("submit", async (event) => {
-    event.preventDefault();
+    // kun Search nappia on painettu.
+    event.preventDefault(); // ei suoriteta oletustoimintoa eventille.
 
     const value = input.value;
     if (!value) return;
@@ -12,13 +15,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const url = `https://api.tvmaze.com/search/shows?q=${value}`;
 
     try {
-      const response = await fetch(url);
+      const response = await fetch(url); // await pysäyttää ja odottaa promisea.
       const data = await response.json();
 
-      resultsDiv.innerHTML = "";
+      resultsDiv.innerHTML = ""; // tyhjentää vanhan tuloksen
 
       data.forEach((item) => {
-        const tv = item.show;
+        // taas uus lambda funktio
+        const tv = item.show; // viitataan json objektin show elementtiin/avaimeen.
 
         const article = document.createElement("article");
 
@@ -31,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
         link.textContent = "Details page";
 
         const img = document.createElement("img");
-        img.src = tv.image?.medium || "";
+        img.src = tv.image?.medium || ""; //Ei aiheuta errorria jos ei kuvaa. https://www.w3schools.com/jsref/jsref_oper_optional.asp
         img.alt = tv.name;
 
         const summary = document.createElement("div");
